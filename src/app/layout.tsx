@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Vazirmatn } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
+import { Cairo } from 'next/font/google';
 
-const vazir = Vazirmatn({ subsets: ['arabic'] });
+const cairo = Cairo({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-background text-white ${vazir.className} antialiased`}
+        className={`bg-background text-white ${cairo.className} antialiased text-right max-h-screen overflow-hidden scroll-smooth`}
       >
         <Header />
         {children}
