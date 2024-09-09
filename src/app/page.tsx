@@ -2,8 +2,6 @@
 
 import { MenuOverlay } from './components/MenuOverlay';
 import { MenuSections } from './components/MenuSections';
-import NeonMenu from './components/NeonMenu';
-import NeonOverlayMenu from './components/NeonOverlayMenu';
 
 export default function Home() {
   return (
