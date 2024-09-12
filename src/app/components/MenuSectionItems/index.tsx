@@ -15,7 +15,9 @@ export const MenuSectionItems: FC<{
           className="w-full flex flex-row-reverse justify-between items-center "
         >
           <span className="drop-shadow-text-shadow">{item.label_fn}</span>
-          <span className="drop-shadow-text-shadow">{item.price}T</span>
+          <span className="drop-shadow-text-shadow">
+            {!!item.price && `${item.price}T`}
+          </span>
         </div>
       ))}
     </div>

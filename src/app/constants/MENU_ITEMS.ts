@@ -2,7 +2,7 @@ export interface IMenuItem {
   name: string;
   label: string;
   label_fn: string;
-  price: number;
+  price: number | null;
 }
 
 export const WARM_DRINKS_ITEMS: IMenuItem[] = [
@@ -166,16 +166,22 @@ export const TEA_HERBAL_ITEMS: IMenuItem[] = [
     price: 79000,
   },
   {
-    name: 'herbal_tea_1',
-    label: 'Herbal Tea 1',
-    label_fn: 'دمنوش',
+    name: 'herbal_tea_aramesh',
+    label: 'Herbal Tea Aramesh',
+    label_fn: 'دمنوش آرامش',
     price: 79000,
   },
   {
-    name: 'herbal_tea_2',
-    label: 'Herbal Tea',
-    label_fn: 'دمنوش',
-    price: 89000,
+    name: 'herbal_tea_gol_gav_zaban',
+    label: 'Herbal Tea Gol Gav Zabaan',
+    label_fn: 'دمنوش گل گاو زبان',
+    price: 86000,
+  },
+  {
+    name: 'herbal_tea_neshat',
+    label: 'Herbal Tea Neshaat',
+    label_fn: 'دمنوش نشاظ',
+    price: 81000,
   },
 ];
 
@@ -275,5 +281,119 @@ export const SNACKS_ITEMS: IMenuItem[] = [
     label: 'Hot Chips',
     label_fn: 'هات چیپس',
     price: 178000,
+  },
+];
+
+export const FOOD_ITEMS: IMenuItem[] = [
+  {
+    name: 'classic_burger',
+    label: 'Classic Burger',
+    label_fn: 'برگر کلاسیک',
+    price: 235000,
+  },
+  {
+    name: 'cheese_burger',
+    label: 'Cheese Burger',
+    label_fn: 'چیزبرگر',
+    price: 255000,
+  },
+  {
+    name: 'mushroom_burger',
+    label: 'Mushroom Burger',
+    label_fn: 'ماشروم برگر',
+    price: 265000,
+  },
+  {
+    name: 'double_burger',
+    label: 'Double Burger',
+    label_fn: 'تست بیکن',
+    price: 340000,
+  },
+  {
+    name: 'pizza_pepperoni',
+    label: 'Pizza with Peperoni',
+    label_fn: 'پیتزا پپرونی',
+    price: 230000,
+  },
+  {
+    name: 'street_premium_pizza',
+    label: 'Street Special Pizza',
+    label_fn: 'پیتزا مخصوص استریت',
+    price: 260000,
+  },
+  {
+    name: 'pizza_garlic_steak',
+    label: 'Pizza with Garlic and Steak',
+    label_fn: 'پیتزا سیر و استیک',
+    price: 340000,
+  },
+  {
+    name: 'pizza_chicken',
+    label: 'Pizza with Chicken',
+    label_fn: 'پیتزا چیکن',
+    price: 250000,
+  },
+  {
+    name: 'penini_chicken',
+    label: 'Penini with Chicken',
+    label_fn: 'پنینی مرغ',
+    price: 220000,
+  },
+  {
+    name: 'penini_tuna',
+    label: 'Penini with Tuna',
+    label_fn: 'پنینی تن ماهی',
+    price: 230000,
+  },
+  {
+    name: 'penini_beef',
+    label: 'Penini with Beef',
+    label_fn: 'پنینی گوشت',
+    price: 260000,
+  },
+  {
+    name: 'grilled_chicken_caesar_salad',
+    label: 'Grilled Chicken Caesar Salad',
+    label_fn: 'سالاد سزار با مرغ گریل',
+    price: 210000,
+  },
+  {
+    name: 'toasted_chicken_caesar_salad',
+    label: 'Toasted Chicken Caesar Salad',
+    label_fn: 'سالاد سزار با مرغ سوخاری',
+    price: 225000,
+  },
+  {
+    name: 'pasta_alfredo',
+    label: 'Pasta with Alfredo Sauce',
+    label_fn: 'پاستا آلفردو',
+    price: 198000,
+  },
+  {
+    name: 'pasta_beacon',
+    label: 'Pasta with Beacon',
+    label_fn: 'پاستا بیکن',
+    price: 192000,
+  },
+];
+
+export const DRINKS_ITEMS: IMenuItem[] = [
+  {
+    name: ' mineral_water',
+    label: 'Mineral Water',
+    label_fn: 'آب معدنی',
+    price: null,
+  },
+  {
+    name: 'coca_cola',
+    label: 'Coca Cola',
+    label_fn: 'نوشابه کوکا',
+    price: null,
+  },
+  {
+    name: 'coca_zero',
+    label: 'Coca Cola Zero',
+    label_fn: 'نوشابه کوکا زیرو',
+    price: null,
   },
 ];
