@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Depth Map with Real Image</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Include Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Include OrbitControls -->
+  <!-- <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script> -->
+  <script>
+    // Basic Three.js Scene Setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Load the real image and depth map
+    const textureLoader = new THREE.TextureLoader();
+    const realImage = textureLoader.load('src/app/header-bg2.webp'); // Replace with the path to your image
+    const depthMap = textureLoader.load('src/app/header-bg2-depth-8.png');   // Replace with the path to your depth map
+
+    // Create the plane with a high subdivision for displacement mapping
+    const planeGeometry = new THREE.PlaneGeometry(5, 5, 100, 100);
+    const material = new THREE.MeshStandardMaterial({
+      map: realImage,               // Apply the real image as the texture
+      displacementMap: depthMap,     // Use the depth map for displacement
+      displacementScale: 0.5,        // Adjust the strength of the depth effect
+    });
+
+    const plane = new THREE.Mesh(planeGeometry, material);
+    scene.add(plane);
+
+    // Add lighting to the scene
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(10, 30, 100);
+    scene.add(light);
+
+    // Camera position
+    camera.position.z = 10;
+
+    // Add OrbitControls to rotate around the scene
+    // const controls = THREE.OrbitControls(camera, renderer.domElement); // Add this after setting up the camera
+
+    let ld = 0
+    let cd = 0
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'w') {
+        camera.position.z -= 0.1
+      } else if (event.key === 's') {
+        camera.position.z += 0.1
+      } else if (event.key === 'a') {
+        camera.rotation.y += 0.1
+      } else if (event.key === 'd') {
+        camera.rotation.y -= 0.1
+      } else if (event.key === 'q') {
+        camera.position.x -= 0.1
+      } else if (event.key === 'e') {
+        camera.position.x += 0.1
+      } else if (event.key === 'z') {
+        camera.position.y -= 0.1
+      } else if (event.key === 'x') {
+        camera.position.y += 0.1
+      }
+    })
+
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      // camera.position.y += 0.0005;
+      // camera.rotation.y += 0.00001
+
+      // if (cd) {
+      //   camera.position.z += 0.005
+      //   if (camera.position.z > 100) {
+      //     cd = 0
+      //   }
+      // } else {
+      //   camera.position.z -= 0.005
+      //   if (camera.position.z < 0) {
+      //     cd = 1
+      //   }
+      // }
+      // if (ld) {
+      //   light.position.z += 0.2
+      //   if (light.position.z > 100) {
+      //     ld = 0
+      //   }
+      // } else {
+      //   light.position.z -= 0.2
+      //   if (light.position.z < 0) {
+      //     ld = 1
+      //   }
+      // }
+      // plane.rotation.y += 0.01;  // Slight rotation for dynamic effect
+      // controls.update();  // Update controls for camera interaction
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+
+</html>
