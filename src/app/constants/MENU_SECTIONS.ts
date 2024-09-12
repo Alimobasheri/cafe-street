@@ -5,8 +5,12 @@ import TeaHerbals from '@/app/tea_herbal.png';
 import ShakeSmoothies from '@/app/shakes.png';
 import Mocktails from '@/app/mocktails.png';
 import Snacks from '@/app/snacks.png';
+import Food from '@/app/food.png';
+import Drinks from '@/app/drinks.png';
 import {
   COLD_CAFFEINE_ITEMS,
+  DRINKS_ITEMS,
+  FOOD_ITEMS,
   MOCKTAILS_ITEMS,
   SHAKES_SMOOTHIES_ITEMS,
   SNACKS_ITEMS,
@@ -78,5 +82,23 @@ export const MENU_SECTIONS = [
     items: SNACKS_ITEMS,
     label_color: 'text-dark-neon-pink',
     drop_shadow: 'drop-shadow-dark-neon-pink',
+  },
+  {
+    name: 'food',
+    label: 'Food',
+    label_fn: 'غذاها',
+    image: Food,
+    items: FOOD_ITEMS,
+    label_color: 'text-dark-neon-green',
+    drop_shadow: 'drop-shadow-dark-neon-green',
+  },
+  {
+    name: 'drinks',
+    label: 'Drinks',
+    label_fn: 'نوشیدنی‌ها',
+    image: Drinks,
+    items: DRINKS_ITEMS,
+    label_color: 'text-dark-neon-blue',
+    drop_shadow: 'drop-shadow-dark-neon-blue',
   },
 ];
