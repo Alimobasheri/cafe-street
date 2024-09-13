@@ -22,17 +22,19 @@ export const MenuSections = () => {
               else setSelectedSection(section.name);
             }}
           >
-            <span className={`min-w-[40px]`}>
-              <Image
-                src={section.image}
-                alt={section.label}
-                width={40}
-                height={40}
-                className={`transition-transform duration-500 ${
-                  isOpen ? 'scale-125' : 'scale-100'
-                }`}
-              />
-            </span>
+            {!!section.image && (
+              <span className={`min-w-[40px]`}>
+                <Image
+                  src={section.image}
+                  alt={section.label}
+                  width={40}
+                  height={40}
+                  className={`transition-transform duration-500 ${
+                    isOpen ? 'scale-125' : 'scale-100'
+                  }`}
+                />
+              </span>
+            )}
             <span className={`text-nowrap ${section.drop_shadow} contrast-150`}>
               {section.label_fn}
             </span>
@@ -42,7 +44,11 @@ export const MenuSections = () => {
               !isOpen ? 'h-0' : 'h-auto'
             }`}
           >
-            <MenuSectionItems isOpen={isOpen} items={section.items} />
+            <MenuSectionItems
+              has_sub_sections={section.has_sub_sections}
+              subsections={section.subsections}
+              items={section.items}
+            />
           </div>
         </motion.div>
       );

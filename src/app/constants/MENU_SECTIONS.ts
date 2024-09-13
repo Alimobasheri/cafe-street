@@ -8,18 +8,85 @@ import Snacks from '@/app/snacks.png';
 import Food from '@/app/food.png';
 import Drinks from '@/app/drinks.png';
 import {
+  BURGER_ITEMS,
+  CEASAR_SALAD_ITEMS,
   COLD_CAFFEINE_ITEMS,
   DRINKS_ITEMS,
   FOOD_ITEMS,
+  IMenuItem,
   MOCKTAILS_ITEMS,
+  PASTA_ITEMS,
+  PENINI_ITEMS,
+  PIZZA_ITEMS,
   SHAKES_SMOOTHIES_ITEMS,
   SNACKS_ITEMS,
   TEA_HERBAL_ITEMS,
   WARM_CAFFEINE_ITEMS,
   WARM_DRINKS_ITEMS,
 } from './MENU_ITEMS';
+import { StaticImageData } from 'next/image';
 
-export const MENU_SECTIONS = [
+export interface IMenuSection {
+  name: string;
+  label: string;
+  label_fn: string;
+  image: StaticImageData | null;
+  items: IMenuItem[];
+  label_color: string;
+  drop_shadow: string;
+  has_sub_sections?: boolean;
+  subsections?: IMenuSection[];
+}
+
+export const FOOD_SUB_SECTIONS: IMenuSection[] = [
+  {
+    name: 'burger',
+    label: 'Burgers',
+    label_fn: 'برگر',
+    image: null,
+    items: BURGER_ITEMS,
+    label_color: 'text-dark-neon-green',
+    drop_shadow: 'drop-shadow-dark-neon-green',
+  },
+  {
+    name: 'pizza',
+    label: 'Pizza',
+    label_fn: 'پیتزا',
+    image: null,
+    items: PIZZA_ITEMS,
+    label_color: 'text-dark-neon-pink',
+    drop_shadow: 'drop-shadow-dark-neon-pink',
+  },
+  {
+    name: 'penini',
+    label: 'Penini',
+    label_fn: 'پنینی',
+    image: null,
+    items: PENINI_ITEMS,
+    label_color: 'text-dark-neon-green',
+    drop_shadow: 'drop-shadow-dark-neon-green',
+  },
+  {
+    name: 'ceasar_salad',
+    label: 'Ceasar Salad',
+    label_fn: 'سالاد سزار',
+    image: null,
+    items: CEASAR_SALAD_ITEMS,
+    label_color: 'text-dark-neon-pink',
+    drop_shadow: 'drop-shadow-dark-neon-pink',
+  },
+  {
+    name: 'pasta',
+    label: 'Pasta',
+    label_fn: 'پاستا',
+    image: null,
+    items: PASTA_ITEMS,
+    label_color: 'text-dark-neon-green',
+    drop_shadow: 'drop-shadow-dark-neon-green',
+  },
+];
+
+export const MENU_SECTIONS: IMenuSection[] = [
   {
     name: 'warm_drink',
     label: 'Warm Drinks',
@@ -46,6 +113,7 @@ export const MENU_SECTIONS = [
     items: COLD_CAFFEINE_ITEMS,
     label_color: 'text-dark-neon-blue',
     drop_shadow: 'drop-shadow-dark-neon-blue',
+    has_sub_sections: false,
   },
   {
     name: 'tea_herbals',
@@ -55,6 +123,7 @@ export const MENU_SECTIONS = [
     items: TEA_HERBAL_ITEMS,
     label_color: 'text-dark-neon-yellow',
     drop_shadow: 'drop-shadow-dark-neon-yellow',
+    has_sub_sections: false,
   },
   {
     name: 'shake_smoothies',
@@ -64,6 +133,7 @@ export const MENU_SECTIONS = [
     items: SHAKES_SMOOTHIES_ITEMS,
     label_color: 'text-dark-neon-green',
     drop_shadow: 'drop-shadow-dark-neon-green',
+    has_sub_sections: false,
   },
   {
     name: 'mocktails',
@@ -73,6 +143,7 @@ export const MENU_SECTIONS = [
     items: MOCKTAILS_ITEMS,
     label_color: 'text-dark-neon-yellow',
     drop_shadow: 'drop-shadow-dark-neon-yellow',
+    has_sub_sections: false,
   },
   {
     name: 'snacks',
@@ -82,6 +153,7 @@ export const MENU_SECTIONS = [
     items: SNACKS_ITEMS,
     label_color: 'text-dark-neon-pink',
     drop_shadow: 'drop-shadow-dark-neon-pink',
+    has_sub_sections: false,
   },
   {
     name: 'food',
@@ -91,6 +163,8 @@ export const MENU_SECTIONS = [
     items: FOOD_ITEMS,
     label_color: 'text-dark-neon-green',
     drop_shadow: 'drop-shadow-dark-neon-green',
+    has_sub_sections: true,
+    subsections: FOOD_SUB_SECTIONS,
   },
   {
     name: 'drinks',
@@ -100,5 +174,6 @@ export const MENU_SECTIONS = [
     items: DRINKS_ITEMS,
     label_color: 'text-dark-neon-blue',
     drop_shadow: 'drop-shadow-dark-neon-blue',
+    has_sub_sections: false,
   },
 ];

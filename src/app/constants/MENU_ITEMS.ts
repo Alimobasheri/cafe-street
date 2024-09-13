@@ -180,7 +180,7 @@ export const TEA_HERBAL_ITEMS: IMenuItem[] = [
   {
     name: 'herbal_tea_neshat',
     label: 'Herbal Tea Neshaat',
-    label_fn: 'دمنوش نشاظ',
+    label_fn: 'دمنوش نشاط',
     price: 81000,
   },
 ];
@@ -217,7 +217,7 @@ export const SHAKES_SMOOTHIES_ITEMS: IMenuItem[] = [
     name: 'chocolate_shake',
     label: 'Chocolate Shake',
     label_fn: 'شیک شکلات',
-    price: 122000,
+    price: 128000,
   },
   {
     name: 'banana_chocolate_shake',
@@ -229,7 +229,7 @@ export const SHAKES_SMOOTHIES_ITEMS: IMenuItem[] = [
     name: 'peanut_shake',
     label: 'Peanut Shake',
     label_fn: 'شیک بادام‌زمینی',
-    price: 128000,
+    price: 138000,
   },
   {
     name: 'strawberry_shake',
@@ -241,11 +241,17 @@ export const SHAKES_SMOOTHIES_ITEMS: IMenuItem[] = [
     name: 'vanilla_shake',
     label: 'Vanilla Shake',
     label_fn: 'شیک وانیل',
-    price: 122000,
+    price: 128000,
   },
 ];
 
 export const SNACKS_ITEMS: IMenuItem[] = [
+  {
+    name: 'fries',
+    label: 'French Fries',
+    label_fn: 'سیب‌زمینی ساده',
+    price: 120000,
+  },
   {
     name: 'street_fries',
     label: 'Street Special Fries',
@@ -284,6 +290,111 @@ export const SNACKS_ITEMS: IMenuItem[] = [
   },
 ];
 
+export const BURGER_ITEMS: IMenuItem[] = [
+  {
+    name: 'classic_burger',
+    label: 'Classic Burger',
+    label_fn: 'برگر کلاسیک',
+    price: 235000,
+  },
+  {
+    name: 'cheese_burger',
+    label: 'Cheese Burger',
+    label_fn: 'چیزبرگر',
+    price: 255000,
+  },
+  {
+    name: 'mushroom_burger',
+    label: 'Mushroom Burger',
+    label_fn: 'ماشروم برگر',
+    price: 265000,
+  },
+  {
+    name: 'double_burger',
+    label: 'Double Burger',
+    label_fn: 'دبل برگر',
+    price: 388000,
+  },
+];
+
+export const PIZZA_ITEMS: IMenuItem[] = [
+  {
+    name: 'pizza_pepperoni',
+    label: 'Pizza with Peperoni',
+    label_fn: 'پیتزا پپرونی',
+    price: 235000,
+  },
+  {
+    name: 'street_premium_pizza',
+    label: 'Street Special Pizza',
+    label_fn: 'پیتزا مخصوص استریت',
+    price: 260000,
+  },
+  {
+    name: 'pizza_garlic_steak',
+    label: 'Pizza with Garlic and Steak',
+    label_fn: 'پیتزا سیر و استیک',
+    price: 380000,
+  },
+  {
+    name: 'pizza_chicken',
+    label: 'Pizza with Chicken',
+    label_fn: 'پیتزا چیکن',
+    price: 320000,
+  },
+];
+
+export const PENINI_ITEMS: IMenuItem[] = [
+  {
+    name: 'penini_chicken',
+    label: 'Penini with Chicken',
+    label_fn: 'پنینی مرغ',
+    price: 220000,
+  },
+  {
+    name: 'penini_tuna',
+    label: 'Penini with Tuna',
+    label_fn: 'پنینی تن ماهی',
+    price: 230000,
+  },
+  {
+    name: 'penini_beef',
+    label: 'Penini with Beef',
+    label_fn: 'پنینی گوشت',
+    price: 260000,
+  },
+];
+
+export const CEASAR_SALAD_ITEMS: IMenuItem[] = [
+  {
+    name: 'grilled_chicken_caesar_salad',
+    label: 'Grilled Chicken Caesar Salad',
+    label_fn: 'سالاد سزار با مرغ گریل',
+    price: 210000,
+  },
+  {
+    name: 'toasted_chicken_caesar_salad',
+    label: 'Toasted Chicken Caesar Salad',
+    label_fn: 'سالاد سزار با مرغ سوخاری',
+    price: 225000,
+  },
+];
+
+export const PASTA_ITEMS: IMenuItem[] = [
+  {
+    name: 'pasta_alfredo',
+    label: 'Pasta with Alfredo Sauce',
+    label_fn: 'پاستا آلفردو',
+    price: 210000,
+  },
+  {
+    name: 'pasta_beacon',
+    label: 'Pasta with Beacon',
+    label_fn: 'پاستا بیکن',
+    price: 198000,
+  },
+];
+
 export const FOOD_ITEMS: IMenuItem[] = [
   {
     name: 'classic_burger',
@@ -306,14 +417,14 @@ export const FOOD_ITEMS: IMenuItem[] = [
   {
     name: 'double_burger',
     label: 'Double Burger',
-    label_fn: 'تست بیکن',
-    price: 340000,
+    label_fn: 'دبل برگر',
+    price: 388000,
   },
   {
     name: 'pizza_pepperoni',
     label: 'Pizza with Peperoni',
     label_fn: 'پیتزا پپرونی',
-    price: 230000,
+    price: 235000,
   },
   {
     name: 'street_premium_pizza',
@@ -325,13 +436,13 @@ export const FOOD_ITEMS: IMenuItem[] = [
     name: 'pizza_garlic_steak',
     label: 'Pizza with Garlic and Steak',
     label_fn: 'پیتزا سیر و استیک',
-    price: 340000,
+    price: 380000,
   },
   {
     name: 'pizza_chicken',
     label: 'Pizza with Chicken',
     label_fn: 'پیتزا چیکن',
-    price: 250000,
+    price: 320000,
   },
   {
     name: 'penini_chicken',
@@ -367,13 +478,13 @@ export const FOOD_ITEMS: IMenuItem[] = [
     name: 'pasta_alfredo',
     label: 'Pasta with Alfredo Sauce',
     label_fn: 'پاستا آلفردو',
-    price: 198000,
+    price: 210000,
   },
   {
     name: 'pasta_beacon',
     label: 'Pasta with Beacon',
     label_fn: 'پاستا بیکن',
-    price: 192000,
+    price: 198000,
   },
 ];
 
