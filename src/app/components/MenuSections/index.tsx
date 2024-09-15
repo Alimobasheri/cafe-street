@@ -3,11 +3,35 @@
 import { MENU_SECTIONS } from '@/app/constants/MENU_SECTIONS';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { MenuSectionItems } from '../MenuSectionItems';
+import logo from '@/app/logo.png';
 
 export const MenuSections = () => {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const sectionsHeight = useRef<number[]>([]);
+  useEffect(() => {
+    if (!!ref.current) {
+      if (!!selectedSection) {
+        const index = MENU_SECTIONS.findIndex(
+          (section) => section.name === selectedSection
+        );
+        ref.current.scrollTop = sectionsHeight.current[index];
+      } else {
+        ref.current.scrollTop = 0;
+      }
+    }
+  }, [selectedSection]);
+
+  useEffect(() => {
+    if (!!ref.current) {
+      const heights = Array.from(ref.current.children).map((child) => {
+        return child.getBoundingClientRect().top - 130;
+      });
+      sectionsHeight.current = heights;
+    }
+  }, []);
   const sections = useMemo(() => {
     return MENU_SECTIONS.map((section) => {
       const isOpen = section.name === selectedSection;
@@ -16,7 +40,9 @@ export const MenuSections = () => {
           <a
             className={`p-2 text-right text-white font-light flex flex-row-reverse justify-start items-center gap-2  text-2xl brightness-125 ${
               isOpen ? 'animate-flicker' : ''
-            }`}
+            } ${
+              !!selectedSection && !isOpen && 'opacity-60'
+            } transition-opacity duration-300`}
             onClick={() => {
               if (isOpen) setSelectedSection(null);
               else setSelectedSection(section.name);
@@ -58,9 +84,18 @@ export const MenuSections = () => {
     <div
       className={`w-full max-h-screen flex flex-col p-2 transition-all duration-300 `}
     >
-      <h1 className={`text-6xl font-bold py-2 text-center`}>STREET CAFE</h1>
+      <div className={`w-full h-[100px] flex justify-center items-center z-10`}>
+        <Image
+          src={logo}
+          alt="logo"
+          width={0}
+          height={100}
+          className="rounded-full animate-ringShadowColorCycle"
+        />
+      </div>
       <div
-        className={`flex flex-col overflow-y-auto pb-20 scroll-smooth transition-all duration-1000 ease-in-out`}
+        ref={ref}
+        className={`flex flex-col overflow-y-auto pb-[300px] scroll-smooth transition-all duration-1000 ease-in-out`}
       >
         {sections}
       </div>

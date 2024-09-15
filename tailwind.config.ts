@@ -86,9 +86,32 @@ const config: Config = {
           '50%': { opacity: '0.95', filter: 'brightness(1.7)' },
           '25%, 75%': { opacity: '1', filter: 'brightness(1.5)' },
         },
+        ringColorCycle: {
+          '0%, 100%': {
+            boxShadow:
+              '0 0 5px rgba(57, 255, 20, 0.5), 0 0 7px rgba(57, 255, 20, 0.5)',
+            ringColor: '#2ecc10',
+          }, // Subtle Neon Green
+          '25%': {
+            boxShadow:
+              '0 0 5px rgba(255, 234, 0, 0.5), 0 0 7px rgba(255, 234, 0, 0.5)',
+            ringColor: '#ccb800',
+          }, // Subtle Neon Yellow
+          '50%': {
+            boxShadow:
+              '0 0 5px rgba(0, 191, 255, 0.5), 0 0 7px rgba(0, 191, 255, 0.5)',
+            ringColor: '#0080bf',
+          }, // Subtle Neon Blue
+          '75%': {
+            boxShadow:
+              '0 0 5px rgba(255, 0, 127, 0.5), 0 0 7px rgba(255, 0, 127, 0.5)',
+            ringColor: '#cc0066',
+          }, // Subtle Neon Pink
+        },
       },
       animation: {
         flicker: 'flicker 1.5s infinite',
+        ringShadowColorCycle: 'ringColorCycle 20s ease-in-out infinite',
       },
       transitionProperty: {
         'max-height': 'max-height',
