@@ -199,7 +199,7 @@ export const TEA_HERBAL_ITEMS: IMenuItem[] = [
     name: 'special_tea_pooneh',
     label: 'special Tea Pooneh',
     label_fn: 'دمنوش مخصوص حال شما',
-    price: null,
+    price: 89000,
   },
 ];
 
@@ -219,13 +219,13 @@ export const MOCKTAILS_ITEMS: IMenuItem[] = [
   {
     name: 'pinacolada',
     label: 'Pinacolada',
-    label_fn: 'پیناکولادا',
+    label_fn: 'پیناکولادا (پوره نارگیل - آناناس - سیب)',
     price: 143000,
   },
   {
     name: 'tornado_twist',
     label: 'Tornado Twist',
-    label_fn: 'تورنادو تویست',
+    label_fn: 'تورنادو تویست (توت‌فرنگی - پرتقال - گریپ فروت)',
     price: 124000,
   },
 ];
@@ -264,7 +264,7 @@ export const SHAKES_SMOOTHIES_ITEMS: IMenuItem[] = [
   {
     name: 'mad_shake',
     label: 'Mad Shake',
-    label_fn: 'مد شیک',
+    label_fn: 'مد شیک (۱ شات اسپرسو + وانیل)',
     price: 146000,
   },
 ];
