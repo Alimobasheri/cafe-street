@@ -17,7 +17,6 @@ import {
   MOCKTAILS_ITEMS,
   PASTA_ITEMS,
   PENINI_ITEMS,
-  PIZZA_ITEMS,
   SHAKES_SMOOTHIES_ITEMS,
   SNACKS_ITEMS,
   TEA_HERBAL_ITEMS,
@@ -47,15 +46,6 @@ export const FOOD_SUB_SECTIONS: IMenuSection[] = [
     items: BURGER_ITEMS,
     label_color: 'text-dark-neon-green',
     drop_shadow: 'drop-shadow-dark-neon-green',
-  },
-  {
-    name: 'pizza',
-    label: 'Pizza',
-    label_fn: 'پیتزا',
-    image: null,
-    items: PIZZA_ITEMS,
-    label_color: 'text-dark-neon-pink',
-    drop_shadow: 'drop-shadow-dark-neon-pink',
   },
   {
     name: 'penini',
