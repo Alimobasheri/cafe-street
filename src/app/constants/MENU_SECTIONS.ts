@@ -49,15 +49,6 @@ export const FOOD_SUB_SECTIONS: IMenuSection[] = [
     drop_shadow: 'drop-shadow-dark-neon-green',
   },
   {
-    name: 'pizza',
-    label: 'Pizza',
-    label_fn: 'پیتزا',
-    image: null,
-    items: PIZZA_ITEMS,
-    label_color: 'text-dark-neon-pink',
-    drop_shadow: 'drop-shadow-dark-neon-pink',
-  },
-  {
     name: 'penini',
     label: 'Penini',
     label_fn: 'پنینی',
