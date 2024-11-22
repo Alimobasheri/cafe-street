@@ -309,7 +309,7 @@ export const SNACKS_ITEMS: IMenuItem[] = [
   {
     name: 'hot_chips',
     label: 'Hot Chips',
-    label_fn: 'هات چیپس',
+    label_fn: 'هات چیپس پپرونی',
     price: 188000,
   },
 ];
