@@ -86,6 +86,14 @@ const config: Config = {
           '50%': { opacity: '0.95', filter: 'brightness(1.7)' },
           '25%, 75%': { opacity: '1', filter: 'brightness(1.5)' },
         },
+        pulsate: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+          },
+          '50%': {
+            transform: 'scale(1.1)',
+          },
+        },
         ringColorCycle: {
           '0%, 100%': {
             boxShadow:
@@ -112,6 +120,7 @@ const config: Config = {
       animation: {
         flicker: 'flicker 1.5s infinite',
         ringShadowColorCycle: 'ringColorCycle 20s ease-in-out infinite',
+        pulse: 'pulsate 1.5s ease-in-out infinite',
       },
       transitionProperty: {
         'max-height': 'max-height',

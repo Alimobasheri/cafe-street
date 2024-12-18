@@ -37,6 +37,7 @@ export interface IMenuSection {
   drop_shadow: string;
   has_sub_sections?: boolean;
   subsections?: IMenuSection[];
+  scale_special_effect?: boolean;
 }
 
 export const FOOD_SUB_SECTIONS: IMenuSection[] = [
@@ -88,6 +89,7 @@ export const MENU_SECTIONS: IMenuSection[] = [
     label_color: 'text-dark-neon-pink',
     drop_shadow: 'drop-shadow-dark-neon-pink',
     has_sub_sections: false,
+    scale_special_effect: true,
   },
   {
     name: 'warm_drink',

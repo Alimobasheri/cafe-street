@@ -43,7 +43,9 @@ export const MenuSections = () => {
               isOpen ? 'animate-flicker' : ''
             } ${
               !!selectedSection && !isOpen && 'opacity-60'
-            } transition-opacity duration-300`}
+            } transition-opacity duration-300 transform origin-right ${
+              section.scale_special_effect && !isOpen ? 'animate-pulse' : ''
+            }`}
             onClick={() => {
               if (isOpen) setSelectedSection(null);
               else setSelectedSection(section.name);
