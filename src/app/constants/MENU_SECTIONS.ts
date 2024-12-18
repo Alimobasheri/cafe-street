@@ -7,6 +7,7 @@ import Mocktails from '@/app/mocktails.png';
 import Snacks from '@/app/snacks.png';
 import Food from '@/app/food.png';
 import Drinks from '@/app/drinks.png';
+import YaldaSpecial from '@/app/yalda_special.png';
 import {
   BURGER_ITEMS,
   CEASAR_SALAD_ITEMS,
@@ -22,6 +23,7 @@ import {
   TEA_HERBAL_ITEMS,
   WARM_CAFFEINE_ITEMS,
   WARM_DRINKS_ITEMS,
+  YALDA_ITEMS,
 } from './MENU_ITEMS';
 import { StaticImageData } from 'next/image';
 
@@ -35,6 +37,7 @@ export interface IMenuSection {
   drop_shadow: string;
   has_sub_sections?: boolean;
   subsections?: IMenuSection[];
+  scale_special_effect?: boolean;
 }
 
 export const FOOD_SUB_SECTIONS: IMenuSection[] = [
@@ -77,6 +80,17 @@ export const FOOD_SUB_SECTIONS: IMenuSection[] = [
 ];
 
 export const MENU_SECTIONS: IMenuSection[] = [
+  {
+    name: 'yalda_special',
+    label: 'Yalda Special',
+    label_fn: 'ویژه شب یلدا',
+    image: YaldaSpecial,
+    items: YALDA_ITEMS,
+    label_color: 'text-dark-neon-pink',
+    drop_shadow: 'drop-shadow-dark-neon-pink',
+    has_sub_sections: false,
+    scale_special_effect: true,
+  },
   {
     name: 'warm_drink',
     label: 'Warm Drinks',

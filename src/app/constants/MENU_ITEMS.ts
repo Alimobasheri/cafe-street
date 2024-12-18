@@ -82,6 +82,12 @@ export const WARM_CAFFEINE_ITEMS: IMenuItem[] = [
     price: 87000,
   },
   {
+    name: 'latte_vanilla',
+    label: 'Latte & Vanilla',
+    label_fn: 'لاته وانیل',
+    price: 90000,
+  },
+  {
     name: 'mocha',
     label: 'Mocha',
     label_fn: 'موکا',
@@ -92,6 +98,12 @@ export const WARM_CAFFEINE_ITEMS: IMenuItem[] = [
     label: 'Caramel Machiato',
     label_fn: 'کارامل ماکیاتو',
     price: 93000,
+  },
+  {
+    name: 'espresso_machiato',
+    label: 'Espresso Machiato',
+    label_fn: 'اسپرسو ماکیاتو',
+    price: 64000,
   },
   {
     name: 'french',
@@ -530,5 +542,26 @@ export const DRINKS_ITEMS: IMenuItem[] = [
     label: 'Coca Cola Zero',
     label_fn: 'نوشابه کوکا زیرو',
     price: null,
+  },
+];
+
+export const YALDA_ITEMS: IMenuItem[] = [
+  {
+    name: 'chelle_mocktail',
+    label: 'Chelle Mocktail',
+    label_fn: 'موکتل شب چله (انار - سودا - لیمو و ...)',
+    price: 110000,
+  },
+  {
+    name: 'latte_pumpkin',
+    label: 'Latte Pumpkin',
+    label_fn: 'لته پامپکین اسپایس (لته کدو‌حلوایی استارباکس)',
+    price: 90000,
+  },
+  {
+    name: 'yalda_salad',
+    label: 'Yalda Salad',
+    label_fn: 'سالاد یلدا (فیله‌مرغ - انار - ذرت - گردو - سس مخصوص)',
+    price: 185000,
   },
 ];

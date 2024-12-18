@@ -51,23 +51,23 @@ const config: Config = {
           '0 0 15px #39FF14',
         ],
         'dark-neon-pink': [
+          '0 0 1px #cc0066',
           '0 0 5px #cc0066',
-          '0 0 15px #cc0066',
           '0 2px 4px rgba(0, 0, 0, 0.9)', // Stronger black shadow for better readability
         ],
         'dark-neon-blue': [
+          '0 0 1px #0080bf',
           '0 0 5px #0080bf',
-          '0 0 15px #0080bf',
           '0 2px 4px rgba(0, 0, 0, 0.9)', // Stronger shadow
         ],
         'dark-neon-yellow': [
+          '0 0 1px #ccb800',
           '0 0 5px #ccb800',
-          '0 0 15px #ccb800',
           '0 2px 4px rgba(0, 0, 0, 0.9)',
         ],
         'dark-neon-green': [
+          '0 0 1px #2ecc10',
           '0 0 5px #2ecc10',
-          '0 0 15px #2ecc10',
           '0 2px 4px rgba(0, 0, 0, 0.9)',
         ],
       },
@@ -85,6 +85,14 @@ const config: Config = {
           '0%, 100%': { opacity: '1', filter: 'brightness(1.25)' },
           '50%': { opacity: '0.95', filter: 'brightness(1.7)' },
           '25%, 75%': { opacity: '1', filter: 'brightness(1.5)' },
+        },
+        pulsate: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+          },
+          '50%': {
+            transform: 'scale(1.1)',
+          },
         },
         ringColorCycle: {
           '0%, 100%': {
@@ -112,6 +120,7 @@ const config: Config = {
       animation: {
         flicker: 'flicker 1.5s infinite',
         ringShadowColorCycle: 'ringColorCycle 20s ease-in-out infinite',
+        pulse: 'pulsate 1.5s ease-in-out infinite',
       },
       transitionProperty: {
         'max-height': 'max-height',

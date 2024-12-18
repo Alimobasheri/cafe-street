@@ -38,11 +38,13 @@ export const MenuSections = () => {
       return (
         <motion.div key={section.name}>
           <a
-            className={`p-2 text-right text-white font-light flex flex-row-reverse justify-start items-center gap-2  text-2xl brightness-125 ${
+            className={`p-2 text-right text-white font-light flex flex-row-reverse justify-start items-center gap-2  text-xl brightness-125 ${
               isOpen ? 'animate-flicker' : ''
             } ${
               !!selectedSection && !isOpen && 'opacity-60'
-            } transition-opacity duration-300`}
+            } transition-opacity duration-300 transform origin-right ${
+              section.scale_special_effect && !isOpen ? 'animate-pulse' : ''
+            }`}
             onClick={() => {
               if (isOpen) setSelectedSection(null);
               else setSelectedSection(section.name);
@@ -61,9 +63,11 @@ export const MenuSections = () => {
                 />
               </span>
             )}
-            <span className={`text-nowrap ${section.drop_shadow} contrast-150`}>
-              {section.label_fn}
-            </span>
+            <div className="flex flex-row-reverse items-baseline gap-2 bg-black/50 p-1 px-2 rounded-lg">
+              <span className={`text-nowrap ${section.drop_shadow}`}>
+                {section.label_fn}
+              </span>
+            </div>
           </a>
           <div
             className={`w-full transition-transform duration-100 origin-top overflow-hidden justify-center items-center ${
