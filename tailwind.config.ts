@@ -51,23 +51,23 @@ const config: Config = {
           '0 0 15px #39FF14',
         ],
         'dark-neon-pink': [
+          '0 0 1px #cc0066',
           '0 0 5px #cc0066',
-          '0 0 15px #cc0066',
           '0 2px 4px rgba(0, 0, 0, 0.9)', // Stronger black shadow for better readability
         ],
         'dark-neon-blue': [
+          '0 0 1px #0080bf',
           '0 0 5px #0080bf',
-          '0 0 15px #0080bf',
           '0 2px 4px rgba(0, 0, 0, 0.9)', // Stronger shadow
         ],
         'dark-neon-yellow': [
+          '0 0 1px #ccb800',
           '0 0 5px #ccb800',
-          '0 0 15px #ccb800',
           '0 2px 4px rgba(0, 0, 0, 0.9)',
         ],
         'dark-neon-green': [
+          '0 0 1px #2ecc10',
           '0 0 5px #2ecc10',
-          '0 0 15px #2ecc10',
           '0 2px 4px rgba(0, 0, 0, 0.9)',
         ],
       },

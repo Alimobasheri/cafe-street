@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { MenuSectionItems } from '../MenuSectionItems';
 import logo from '@/app/logo.png';
+import ArrowLeft from '@/app/icons/ArrowLeft';
 
 export const MenuSections = () => {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
@@ -38,7 +39,7 @@ export const MenuSections = () => {
       return (
         <motion.div key={section.name}>
           <a
-            className={`p-2 text-right text-white font-light flex flex-row-reverse justify-start items-center gap-2  text-2xl brightness-125 ${
+            className={`p-2 text-right text-white font-light flex flex-row-reverse justify-start items-center gap-2  text-xl brightness-125 ${
               isOpen ? 'animate-flicker' : ''
             } ${
               !!selectedSection && !isOpen && 'opacity-60'
@@ -61,9 +62,18 @@ export const MenuSections = () => {
                 />
               </span>
             )}
-            <span className={`text-nowrap ${section.drop_shadow} contrast-150`}>
-              {section.label_fn}
-            </span>
+            <div className="flex flex-row-reverse items-baseline gap-2 bg-black/50 p-1 rounded-lg">
+              <span className={`text-nowrap ${section.drop_shadow}`}>
+                {section.label_fn}
+              </span>
+              <div
+                className={`transition-all duration-300 ${
+                  isOpen ? '-rotate-90' : ''
+                }`}
+              >
+                <ArrowLeft width={8} height={8} />
+              </div>
+            </div>
           </a>
           <div
             className={`w-full transition-transform duration-100 origin-top overflow-hidden justify-center items-center ${
