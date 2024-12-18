@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { MenuSectionItems } from '../MenuSectionItems';
 import logo from '@/app/logo.png';
-import ArrowLeft from '@/app/icons/ArrowLeft';
 
 export const MenuSections = () => {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
