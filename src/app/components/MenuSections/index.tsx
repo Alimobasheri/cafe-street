@@ -64,17 +64,10 @@ export const MenuSections = () => {
                 />
               </span>
             )}
-            <div className="flex flex-row-reverse items-baseline gap-2 bg-black/50 p-1 rounded-lg">
+            <div className="flex flex-row-reverse items-baseline gap-2 bg-black/50 p-1 px-2 rounded-lg">
               <span className={`text-nowrap ${section.drop_shadow}`}>
                 {section.label_fn}
               </span>
-              <div
-                className={`transition-all duration-300 ${
-                  isOpen ? '-rotate-90' : ''
-                }`}
-              >
-                <ArrowLeft width={8} height={8} />
-              </div>
             </div>
           </a>
           <div
