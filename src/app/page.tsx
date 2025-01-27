@@ -5,7 +5,7 @@ import { MenuSections } from './components/MenuSections';
 
 export default function Home() {
   return (
-    <div className="flex flex-col space-between font-[family-name:var(--font-geist-sans)] absolute top-0 left-0 w-full h-screen max-h-screen">
+    <div className="flex flex-col justify-center items-center font-[family-name:var(--font-geist-sans)] absolute top-0 left-0 w-full h-screen max-h-screen">
       <MenuOverlay>
         <MenuSections />
       </MenuOverlay>

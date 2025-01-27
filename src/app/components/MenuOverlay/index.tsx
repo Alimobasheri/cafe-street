@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const MenuOverlay: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <main className="w-full h-full">
+    <main className="w-full max-w-md h-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
