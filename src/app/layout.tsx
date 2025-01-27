@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-background text-white ${cairo.className} antialiased text-right max-h-screen overflow-hidden scroll-smooth`}
+        className={`bg-background text-white ${cairo.className} antialiased text-right max-h-screen overflow-hidden scroll-smooth flex flex-col justify-center items-center`}
       >
         <Header />
         {children}

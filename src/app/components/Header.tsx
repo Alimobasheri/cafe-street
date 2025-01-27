@@ -3,7 +3,7 @@ import headerbg from '@/app/header-bg2.webp';
 
 const Header = () => {
   return (
-    <header className="h-screen w-full flex flex-col justify-start">
+    <header className="max-w-md h-screen w-full flex flex-col justify-center items-center">
       <div className="relative w-full h-max-screen flex flex-col justify-center items-center ">
         <div className="w-full h-screen">
           <Image
