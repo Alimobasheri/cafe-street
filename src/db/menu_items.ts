@@ -6,4 +6,5 @@ export type MenuItem = {
   label: string;
   label_fn: string; // Persian translation
   price: number; // Must be >= 0
+  order_index?: number; // Order of the item in the section
 };
