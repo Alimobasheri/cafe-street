@@ -91,8 +91,8 @@ export default function MenuSubsectionsManager({
 
       resetForm();
       onDataChange();
-    } catch (err: any) {
-      setError(err.message || 'خطایی رخ داده است');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'خطایی رخ داده است');
     } finally {
       setLoading(false);
     }
@@ -129,8 +129,8 @@ export default function MenuSubsectionsManager({
       if (error) throw error;
       setDeleteConfirm(null);
       onDataChange();
-    } catch (err: any) {
-      setError(err.message || 'خطایی رخ داده است');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'خطایی رخ داده است');
     } finally {
       setLoading(false);
     }

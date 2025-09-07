@@ -114,9 +114,9 @@ export default function MenuItemsManager({
 
       // Clear success message after 3 seconds
       setTimeout(() => setSuccess(''), 3000);
-    } catch (err: any) {
+    } catch (err) {
       console.error('Submit error:', err);
-      setError(err.message || 'خطایی رخ داده است');
+      setError(err instanceof Error ? err.message : 'خطایی رخ داده است');
     } finally {
       setLoading(false);
     }
@@ -153,8 +153,8 @@ export default function MenuItemsManager({
       if (error) throw error;
       setDeleteConfirm(null);
       onDataChange();
-    } catch (err: any) {
-      setError(err.message || 'خطایی رخ داده است');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'خطایی رخ داده است');
     } finally {
       setLoading(false);
     }

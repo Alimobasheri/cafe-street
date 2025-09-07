@@ -77,8 +77,8 @@ export default function MenuItemsManager({
 
       resetForm();
       onDataChange();
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -110,8 +110,8 @@ export default function MenuItemsManager({
 
       if (error) throw error;
       onDataChange();
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
