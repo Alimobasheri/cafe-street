@@ -1,0 +1,42 @@
+/* Admin-specific styles to override main layout */
+.admin-override {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: #111827 !important; /* gray-900 */
+  color: white !important;
+  z-index: 9999 !important;
+  overflow: auto !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Reset any inherited flex properties */
+.admin-override * {
+  box-sizing: border-box;
+}
+
+/* Persian number support */
+.admin-override input[type='number'] {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Better mobile spacing */
+@media (max-width: 640px) {
+  .admin-override .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure forms work properly with RTL */
+.admin-override form {
+  direction: rtl;
+}
+
+.admin-override input:not([type='email']):not([type='number']) {
+  text-align: right;
+}

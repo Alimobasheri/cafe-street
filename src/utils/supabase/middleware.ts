@@ -9,7 +9,7 @@ export const createClient = (request: NextRequest) => {
     },
   });
 
-  createServerClient(
+  const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -32,5 +32,5 @@ export const createClient = (request: NextRequest) => {
     }
   );
 
-  return supabaseResponse;
+  return { supabase, response: supabaseResponse };
 };
