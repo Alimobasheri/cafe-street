@@ -93,7 +93,7 @@ export default function MenuItemsManager({
       label: item.label,
       label_fn: item.label_fn,
       price: item.price,
-      order_index: item.order_index || null,
+      order_index: item.order_index ?? null,
     });
     setShowForm(true);
   };
@@ -319,14 +319,13 @@ export default function MenuItemsManager({
                   Order Index
                 </label>
                 <input
-                  type="number"
-                  min="0"
                   className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white"
-                  value={formData.order_index || 0}
+                  value={formData.order_index ?? ''}
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      order_index: parseInt(e.target.value) || 0,
+                      order_index:
+                        e.target.value === '' ? null : parseInt(e.target.value),
                     })
                   }
                 />

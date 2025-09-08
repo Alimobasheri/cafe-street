@@ -18,7 +18,7 @@ interface ItemFormData {
   label: string;
   label_fn: string;
   price: number;
-  order_index?: number;
+  order_index?: number | null;
 }
 
 const initialFormData: ItemFormData = {
@@ -28,7 +28,7 @@ const initialFormData: ItemFormData = {
   label: '',
   label_fn: '',
   price: 0,
-  order_index: 0,
+  order_index: null,
 };
 
 export default function MenuItemsManager({
@@ -71,7 +71,7 @@ export default function MenuItemsManager({
         label: formData.label.trim(),
         label_fn: formData.label_fn.trim(),
         price: Number(formData.price),
-        order_index: formData.order_index || 0,
+        order_index: formData.order_index || null,
       };
 
       console.log('Submitting data:', submitData);
@@ -131,7 +131,7 @@ export default function MenuItemsManager({
       label: item.label,
       label_fn: item.label_fn,
       price: item.price,
-      order_index: item.order_index || 0,
+      order_index: item.order_index ?? null,
     });
     setShowForm(true);
   };
@@ -369,14 +369,13 @@ export default function MenuItemsManager({
                   ترتیب نمایش
                 </label>
                 <input
-                  type="number"
-                  min="0"
                   className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white text-right"
-                  value={formData.order_index || 0}
+                  value={formData.order_index ?? ''}
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      order_index: parseInt(e.target.value) || 0,
+                      order_index:
+                        e.target.value === '' ? null : parseInt(e.target.value),
                     })
                   }
                 />
@@ -444,7 +443,7 @@ export default function MenuItemsManager({
                   <div>بخش: {getSectionName(item.section_id)}</div>
                   <div>زیربخش: {getSubsectionName(item.subsection_id)}</div>
                   <div>شناسه: {item.name}</div>
-                  <div>ترتیب: {item.order_index || 0}</div>
+                  <div>ترتیب: {item.order_index ?? ''}</div>
                 </div>
               </div>
             </div>
