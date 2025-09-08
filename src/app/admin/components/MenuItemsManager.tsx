@@ -18,7 +18,7 @@ interface ItemFormData {
   label: string;
   label_fn: string;
   price: number;
-  order_index?: number;
+  order_index?: number | null;
 }
 
 const initialFormData: ItemFormData = {
@@ -28,7 +28,7 @@ const initialFormData: ItemFormData = {
   label: '',
   label_fn: '',
   price: 0,
-  order_index: 0,
+  order_index: null,
 };
 
 export default function MenuItemsManager({
@@ -93,7 +93,7 @@ export default function MenuItemsManager({
       label: item.label,
       label_fn: item.label_fn,
       price: item.price,
-      order_index: item.order_index || 0,
+      order_index: item.order_index || null,
     });
     setShowForm(true);
   };
